@@ -18,7 +18,7 @@
 
   var DATA = JSON.parse(localStorage.getItem("table")) || {
     collection: [
-      { id: 1, name: "Real Madrid", points: 43 },
+      { id: 1, name: "Real Madrid CF", points: 43 },
       { id: 2, name: "FC Sevilla", points: 35 },
       { id: 3, name: "FC Barcelona", points: 33 }
     ]
@@ -107,10 +107,24 @@
     return component;
   }
 
+  var Leader = (props) => {
+    
+    var team = DATA.collection[0];
+    console.log(team);
+
+    return jsHTML.div({className: "leader"}, [
+          jsHTML.h3({}, jsHTML.text("Leader")),
+          jsHTML.hr({}, null),
+          jsHTML.span({}, jsHTML.text("Team: " + team.name)),
+          jsHTML.span({}, [jsHTML.text("Points: "), jsHTML.text(team.points)])
+        ]);
+  }
+
   var App = (props) => {
     return jsHTML.div({}, [
         Heading(),
-        Team(DATA)
+        Team(DATA),
+        Leader(DATA)
         ]);
   }
 

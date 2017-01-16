@@ -51,3 +51,13 @@ header {
 .buttons button {
   margin: 0 10px;
 }
+
+.leader {
+  padding: 10px;
+  background: #f1f1f1;
+  color: #333;
+}
+
+.leader span {
+  display: block;
+}
